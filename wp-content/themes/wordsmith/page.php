@@ -1,6 +1,6 @@
 <?php get_header() ?>
 
-
+<div style="width: 250px; margin: 0 auto"></div>
 <!-- featured 
 ================================================== -->
 <section class="s-featured">

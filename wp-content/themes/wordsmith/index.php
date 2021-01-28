@@ -1,18 +1,15 @@
-<?php get_header() ?>
+<?php get_header(); ;?>
 <div>
 
     <section class="s-content">
         <div class="row entries-wrap wide">
             <div class="entries">
-                <?php while( have_posts() ) :
-                    the_post();
-                ?>
+
+                <?php while(have_posts()) : the_post()?>
                     <article class="col-block">
-                        
                         <div class="item-entry" data-aos="zoom-in">
                             <div class="item-entry__thumb">
                                 <a href="<?php the_permalink() ?>" class="item-entry__thumb-link">
-
                                    <?php 
                                      add_image_size( 'spec_thumb', 500, 300, true );
                                      the_post_thumbnail('spec_thumb');
@@ -22,7 +19,7 @@
             
                             <div class="item-entry__text">    
                                 <div class="item-entry__cat">
-                                    <a href="category.html">Design</a> 
+                                    <a href="category.html"><?php  echo 'design'; ?></a> 
                                 </div>
 
                                 <h1 class="item-entry__title"><a href="single-standard.html"><?php the_title() ?></a></h1>
@@ -34,9 +31,10 @@
                             </div>
                         </div> <!-- item-entry -->
                     </article> <!-- end article -->
-              <?php endwhile?>
+                <?php endwhile ?>
             </div> <!-- end entries -->
         </div> <!-- end entries-wrap -->
+                        <?php echo paginate_links(); ?>
 
         <div class="row pagination-wrap">
             <div class="col-full">
@@ -56,9 +54,6 @@
             </div>
         </div>
     </section>
-    <
-<!--                 <h3></h3>
-                <div><strong></strong></div>
-                <a href="<?php the_permalink() ?>">Далее</a>
-  -->
+
+
 <?php get_footer() ?>

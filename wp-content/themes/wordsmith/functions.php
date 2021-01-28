@@ -30,6 +30,23 @@
 	});
 
 
+	add_shortcode( 'footag', 'footag_func' );
+
+	function footag_func(){
+
+			query_posts( 'posts_per_page=6' );
+			while( have_posts() ) {
+				the_post();
+			} 
+		 return "foo = aslf'psdka;fksdakf';kas;ldfkl;sdk";
+	}
+
+
+
+
+	// результат: 
+	// шоткод [footag foo="bar"] в тексте будет заменен на "foo = bar"
+
 
 /*	add_action('wp_qnueue_scripts', function() {
 		wp_qnueue_style('style', get_stylesheet_uri())
